@@ -1,7 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "Copy and paste without formatting",
-  "description": "Easily copy and paste text without formatting using keyboard shortcuts or the context menu",
+  "name": "Better Copy Paste",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "better-copy-paste@example.com"
+    }
+  },
+  "description": "Easily copy and paste text without formatting using keyboard shortcuts or the context menu.",
   "options_ui": {
     "page": "src/pages/options/index.html"
   },

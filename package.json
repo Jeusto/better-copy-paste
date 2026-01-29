@@ -1,9 +1,16 @@
 {
-  "name": "copy-paste-without-formatting",
+  "name": "better-copy-paste",
   "version": "0.0.1",
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "build:chrome": "cross-env BROWSER=chrome vite build",
+    "build:firefox": "cross-env BROWSER=firefox vite build",
+    "build:all": "npm run build:chrome && npm run build:firefox",
+    "dev": "vite",
+    "dev:firefox": "cross-env BROWSER=firefox vite",
+    "package:chrome": "npm run build:chrome && node scripts/package.js chrome",
+    "package:firefox": "npm run build:firefox && node scripts/package.js firefox",
+    "package:all": "npm run package:chrome && npm run package:firefox"
   },
   "type": "module",
   "dependencies": {
@@ -13,6 +20,8 @@
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^2.0.0-beta.23",
+    "archiver": "^7.0.1",
+    "cross-env": "^7.0.3",
     "@types/chrome": "^0.0.268",
     "@types/node": "^20.12.11",
     "@types/react": "^18.3.1",
